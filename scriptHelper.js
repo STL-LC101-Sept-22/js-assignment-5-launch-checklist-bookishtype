@@ -20,14 +20,19 @@ function validateInput(testInput) {
     let testNum = Number(testInput);
     if(testInput === "") {
         return "Empty";
-    } else if(testInput === NaN) {
+    } else if(isNaN(testInput)) {
         return "Not a Number";
-    } else if(testInput !== NaN){
+    } else if(isNaN(testInput)=== false){
         return "Is a Number";
     }
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+   let pilotStatus = document.getElementById("pilotStatus");
+   let copilotStatus = document.getElementById("copilotStatus");
+   let fuelLevel = document.getElementById("fuelLevel");
+   let cargoMass = document.getElementById("cargoMass");
+   let launchStatus = document.getElementById("launchStatus");
    
 }
 
