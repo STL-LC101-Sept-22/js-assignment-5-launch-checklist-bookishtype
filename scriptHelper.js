@@ -33,7 +33,28 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    let fuelLevel = document.getElementById("fuelLevel");
    let cargoMass = document.getElementById("cargoMass");
    let launchStatus = document.getElementById("launchStatus");
-   
+
+
+   if (validateInput(pilot) === "Empty" ||
+   validateInput(copilot)=== "Empty" ||
+   validateInput(fuelLevel) === "Empty" ||
+    validateInput(cargoMass) === "Empty" ) {
+        alert("All fields are required!");
+
+    } else if(validateInput(pilot) === "Is a Number" ||
+    validateInput(copilot)=== "Is a Number" ||
+    validateInput(fuelLevel) === "Not a Number" ||
+     validateInput(cargoMass) === "Not a Number" ) {
+        alert("Please enter a valid value!");
+     } else{
+        list.style.visibility = "visible";
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
+            if(fuelLevel < 10000 && cargoMass <= 10000){
+                
+            }
+    }
+
 }
 
 async function myFetch() {
