@@ -65,9 +65,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
                 cargoMass.innerHTML = "Cargo mass too heavy for launch";
                 launchStatus.innerHTML = "Shuttle Not Ready for Launch";
                 launchStatus.style.color = "rgb(199, 37, 78)";
-    }
-
-}
+            } else if(cargoLevel > 10000 && fuelLevel >= 10000) {
+                cargoMass.innerHTML = "Cargo mass too heavy for launch";
+                fuelStatus.innerHTML = "Fuel level high enough for launch"
+                launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+                launchStatus.style.color = "rgb(199, 37, 78)";
+    
+            };
+        };
+};
 
 async function myFetch() {
     let planetsReturned;
