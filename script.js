@@ -28,10 +28,16 @@ listedPlanetsResponse.then(function (result) {
     console.log(listedPlanets);
 }).then(function () {
     console.log(listedPlanets);
-    let planet = pickPlanet(listedPlanets); 
-       addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
-}) 
-    
-    
-   
+   let targetPlanet = pickPlanet(listedPlanets);
+        let name = targetPlanet.name;
+        let diameter = targetPlanet.diameter;
+        let star = targetPlanet.star;
+        let distance = targetPlanet.distance;
+        let imageUrl = targetPlanet.image;
+        let moons = targetPlanet.moons;
+
+
+  addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl)
+    });
+
 });
